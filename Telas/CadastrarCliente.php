@@ -2,11 +2,14 @@
     namespace PHP\Modelo\Telas;
     require_once('../DAO/Conexao.php');
     require_once('../DAO/Inserir.php');
+    require_once('../DAO/Consultar.php');
     use PHP\Modelo\DAO\Conexao;
     use PHP\Modelo\DAO\Inserir;
+    use PHP\Modelo\DAO\Consultar;
 
-    $conexao = new Conexao();//acessar a classe conexao
-    $inserir = new Inserir();
+    $conexao   = new Conexao();//acessar a classe conexao
+    $inserir   = new Inserir();
+    $consultar = new Consultar();
 ?>
 
 <!DOCTYPE html>
@@ -70,8 +73,6 @@
         <button type="submit" class="btn btn-primary">Cadastrar
             <?php
                 try{
-                    
-
                     $cpf        = $_POST['cpf'];
                     $nome       = $_POST['nome'];
                     $telefone   = $_POST['telefone'];
@@ -97,7 +98,7 @@
                                                $cpf,
                                                $nome,
                                                $telefone,
-                                               '1',
+                                               $consultar->consultarEndereco($conexao),
                                                $precoTotal);
                 }
                 catch(Except $erro)
@@ -113,5 +114,6 @@
             ?>
         </button>
     </form>
+    <button class="btn btn-primary"><a style="text-decoration:none;color:#fff;" href="../main.php">Voltar</a></button>
 </body>
 </html>

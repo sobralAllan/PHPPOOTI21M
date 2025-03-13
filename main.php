@@ -1,91 +1,20 @@
-<?php
-    namespace PHP\Modelo;
-    require_once('Pessoa.php');//Chamar a classe
-    require_once('Cliente.php');
-    require_once('Funcionario.php');
-    require_once('Endereco.php');
-    require_once('Produto.php');
-    require_once('Veiculo.php');
-    require_once('Compra.php');
-    require_once('DAO/Conexao.php');
-    use PHP\Modelo\DAO\Conexao;
-    use PHP\Modelo\Pessoa;//Defina qual a classe
-    use PHP\Modelo\Cliente;
-    use PHP\Modelo\Funcionario;
-    use PHP\Modelo\Endereco;
-    use PHP\Modelo\Produto;
-    use PHP\Modelo\Veiculo;
-    use PHP\Modelo\Compra;
-
-    $conexao = new Conexao();
-    $conexao->conectar();
-
-    /*
-    $produto = new Produto(1,'Teste',123,10);
-    $compra1 = new Compra(1,
-                          $produto,
-                          10,
-                          1.45,
-                          14.50);
-    
-    echo $compra1->imprimir();
-
-    $endereco1 = new Endereco(1,
-                              'Avenida Senador Vergueiro',
-                              400,
-                              'Centro',
-                              'São Bernardo do Campo',
-                              'São Paulo',
-                              02356000,
-                              'Brasil');
-
-    echo $endereco1->imprimir();
-
-    $cliente1 = new Cliente('12345678910',
-                          'Allan S',
-                          '11985852626',
-                           $endereco1,
-                           1500);
-
-    $cliente2 = new Cliente('12345678911',
-                          'Claudia',
-                          '1189898989',
-                          $endereco1,
-                           780);
-
-    $funcionario1 = new Funcionario('12345667768',
-                                    'Isaac',
-                                    '1189898989',
-                                    $endereco1,
-                                    890);
-
-    $funcionario2 = new Funcionario('12344325255',
-                                    'Cleiton',
-                                    '1124242424',
-                                    $endereco1,
-                                    1900);
-
-    
-
-    $veiculo1 = new Veiculo(1, 
-                            'FMW33G8', 
-                            $cliente1, 
-                            "Branco", 
-                            "Fiesta", 
-                            2014, 
-                            "Ford");
-
-    echo "<br><br>".$veiculo1->imprimir();
-    echo "<br><br>".$cliente1->imprimir();
-    echo "<br><br>".$cliente2->imprimir();
-    echo "<br><br>".$funcionario1->imprimir();
-    echo "<br><br>".$funcionario2->imprimir();
-    echo "<br><br>".$produto->imprimir();
-
-    */
-
-
-
-
-
-?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Página Principal</title>
+</head>
+<body>
+    <h1 style="text-align:center;"> Bem-Vindo! </h1>
+    <form class="form-control form-control-sm" style="width:50%;margin-left: 25%;">
+        <button class="btn btn-primary"><a style="text-decoration:none;color:#fff;" href="Telas/cadastrarCliente.php">Cadastrar</a></button>
+        <button class="btn btn-primary"><a style="text-decoration:none;color:#fff;" href="Telas/ConsultarCliente.php">Consultar</a></button>
+        <button class="btn btn-primary"><a style="text-decoration:none;color:#fff;" href="Telas/AtualizarCliente.php">Atualizar</a></button>
+        <button class="btn btn-primary"><a style="text-decoration:none;color:#fff;" href="Telas/ExcluirCliente.php">Excluir</a></button>
+    </form>
+</body>
+</html>

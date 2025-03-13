@@ -24,5 +24,14 @@ create table cliente(
 alter table cliente add constraint clienteEndereco
 foreign key(codigoEndereco) references endereco(codigo);
 
-select * from cliente;
 select * from endereco;
+
+delete from endereco where codigo = 2;
+select * from endereco;
+
+select * from cliente inner join endereco on 
+codigoEndereco = codigo and cpf = '12345';
+
+select codigoEndereco from cliente where cpf = '12345';
+
+select max(codigo) from endereco;
